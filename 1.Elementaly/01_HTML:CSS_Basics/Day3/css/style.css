@@ -1,0 +1,25 @@
+h2 {
+  color: red;
+}
+
+.yellow-font {
+  color: yellow;
+  font-size: 20px;
+}
+
+h3 {
+  color: blue;
+  font-size: 20px;
+}
+
+.important {
+  font-weight: bold;
+}
+
+.a_contents p {
+  font-size: 18px;
+}
+
+.contents > p {
+  color: red;
+}
