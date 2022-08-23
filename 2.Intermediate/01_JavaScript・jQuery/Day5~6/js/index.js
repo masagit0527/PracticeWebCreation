@@ -43,5 +43,22 @@ $(".scroll-top").click(() => {
 その枠の中心に拡大されたコース写真を表示
 画面のどこかをクリックすると拡大写真と背景ボックスを非表示
 アニメーションはフェードイン・フェードアウト
-
 */
+const modalWrapper = document.querySelector(".modal-wrapper");
+
+const modalImage = document.querySelector(".modal-image");
+
+const images = document.querySelectorAll("img");
+
+images.forEach((image) => {
+  image.addEventListener("click", () => {
+    const src = image.getAttribute("src");
+    modalWrapper.classList.add("show");
+    modalImage.classList.add("show");
+    modalImage.setAttribute("src", src);
+  });
+});
+
+modalWrapper.addEventListener("click", () =>
+  modalWrapper.classList.toggle("show")
+);
