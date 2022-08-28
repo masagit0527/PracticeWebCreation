@@ -1,0 +1,245 @@
+@use "global" as *;
+
+.container {
+  width: 90%;
+  max-width: 980px;
+  margin: auto;
+}
+.clear {
+  &::after {
+    content: "";
+    clear: both;
+    display: block;
+  }
+}
+.section {
+  padding: 60px 0;
+  @include mq() {
+    padding: 80px 0;
+  }
+  &-title {
+    font-weight: bold;
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 40px;
+    @include mq() {
+      font-size: 24px;
+    }
+  }
+}
+
+.scroll-top {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  width: 50px;
+  height: 50px;
+  background: rgb(26, 25, 25);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  & a {
+    text-decoration: none;
+    color: white;
+    font-size: medium;
+    font-weight: bold;
+  }
+  &:hover {
+    opacity: 0.8;
+  }
+}
+.header {
+  padding: 20px 0;
+  position: static;
+  &-title {
+    font-size: 24px;
+    font-weight: bold;
+    @include mq() {
+      text-align: center;
+    }
+  }
+  &-left {
+    float: left;
+    @include mq() {
+      float: none;
+    }
+  }
+  &-right {
+    float: right;
+    @include mq() {
+      float: none;
+    }
+  }
+  &-nav {
+    @include mq() {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  &-nav-item {
+    float: left;
+    margin-left: 50px;
+    @include mq() {
+      float: none;
+      margin: 0;
+    }
+  }
+}
+
+.dropdown {
+  position: relative;
+  ul {
+    position: absolute;
+    width: 100%;
+    margin: 1% 0;
+    display: none;
+  }
+  ul > li {
+    text-align: center;
+    background-color: rgb(237, 237, 237);
+    color: black;
+    opacity: 0.5;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px;
+    &:hover {
+      background-color: $tColor;
+      color: white;
+      opacity: none;
+    }
+  }
+}
+.top {
+  background-image: url(../img/main-vsual-nontitle.png);
+  background-size: cover;
+  padding: 80px 0;
+  @include mq() {
+    padding: 120px;
+  }
+  &-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 48px;
+    margin-bottom: 20px;
+    @include mq() {
+      font-size: 32px;
+    }
+  }
+}
+.sub-title {
+  text-align: center;
+  font-size: 18px;
+  @include mq() {
+    font-size: 14px;
+  }
+}
+.about {
+  &-left {
+    float: left;
+    width: 48%;
+    @include mq() {
+      float: none;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+  &-right {
+    float: right;
+    width: 48%;
+    @include mq() {
+      float: none;
+      width: 100%;
+    }
+    p {
+      @include mq() {
+        font-size: 14px;
+      }
+    }
+  }
+}
+.course {
+  background-color: $bColor;
+  &-wrapper {
+    display: flex;
+    justify-content: space-between;
+    @include mq() {
+      flex-wrap: wrap;
+    }
+  }
+  &-item {
+    width: 30%;
+    @include mq() {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    p {
+      @include mq() {
+        font-size: 14px;
+      }
+    }
+    img:hover {
+      cursor: pointer;
+      opacity: 0.7;
+    }
+  }
+}
+.modal {
+  &-wrapper {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+    opacity: 0;
+    transition: 0.25s ease-out;
+    z-index: 3;
+    &.show {
+      opacity: 1;
+      pointer-events: all;
+      z-index: 4;
+    }
+  }
+  &-image {
+    position: absolute;
+    max-width: 100%;
+    max-height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    opacity: 0;
+    transition: 0.5s ease-out;
+    z-index: 3;
+    &.show {
+      opacity: 1;
+      z-index: 4;
+    }
+  }
+}
+.contact {
+  &-message {
+    margin-bottom: 20px;
+    text-align: center;
+    @include mq() {
+      font-size: 14px;
+    }
+  }
+}
+.footer {
+  background-color: $tColor;
+  color: white;
+  padding: 20px 0;
+}
+.copyright {
+  float: right;
+  font-size: 12px;
+  @include mq() {
+    float: none;
+    font-size: 10px;
+    text-align: center;
+  }
+}
